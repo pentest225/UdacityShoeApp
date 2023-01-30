@@ -6,6 +6,10 @@
 
     </data>
 
+<!--    Is use constraintLayout here because
+        i want the Save button to be at a position
+        proportional to the editText
+        -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

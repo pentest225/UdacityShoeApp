@@ -6,6 +6,7 @@
     <data>
 
     </data>
+<!--    Is use constraint Layout because a when to position de FAB in button of this view  -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +17,8 @@
         android:background="@color/colorPrimary"
         android:padding="16dp"
         tools:context=".HomeFragment">
-
+        <!--        I use linearLayout here because there is not enough constraint between the elements of this view.-->
+        <!--        They are just positioned one below the other-->
             <LinearLayout
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"

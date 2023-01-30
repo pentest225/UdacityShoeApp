@@ -13,7 +13,8 @@
         android:background="@color/colorPrimary"
         android:padding="16dp"
         tools:context=".AddShoeFragment">
-
+<!--        I use linearLayout here because there is not enough constraint between the elements of this view.-->
+<!--        They are just positioned one below the other-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,11 +114,15 @@
                 android:text="@string/add_image"
                 style="@style/sub_title_page" />
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
-
+<!--
+    I use ConstraintLayout here because I want the RecyclerView
+    to occupy a space relative to the Add Button
+    -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvShoeImage"
                     android:layout_width="0dp"
