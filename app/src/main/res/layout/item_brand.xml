@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="brand"
+            type="com.udacity.shoestore.models.BrandData" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/imBrand"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                tools:src="@drawable/nike_brands"
+                android:src="@{brand.brandRes}"
+                />
+
+            <TextView
+                android:id="@+id/tvBrandName"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="@string/add_brand"
+                android:text="@{brand.brandName}"
+                style="@style/brand_style"
+
+                />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

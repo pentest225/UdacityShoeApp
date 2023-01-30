@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="login_fragment_name">Sign In</string>
+    <string name="logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">Let\'s sign you in.</string>
+    <string name="login_description">Welcome back you\'ve been missed</string>
+    <string name="dont_have_account">Don\'t have an account ?</string>
+    <string name="register">Register</string>
+    <string name="phone_or_email">Phone or email</string>
+    <string name="image_link">Image url link </string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="save">Save Shoes</string>
+    <string name="findYourShoe">Find the shoe designed for </string>
+    <string name="you">You</string>
+    <string name="the">The</string>
+    <string name="awesome">Awesome</string>
+    <string name="branded">Branded</string>
+    <string name="shoes">Shoes</string>
+    <string name="fin_yor_shoe">Find your shoe 🥾 among our best brands ✊🏿</string>
+    <string name="default_shoe_name">Nike Air vapor Max 2020 FK</string>
+    <string name="default_shoe_small_name">Nike Air</string>
+    <string name="default_shoe_description">Men\'s Soe | 7 Colors | Free Shipping</string>
+    <string name="default_shoe_price">$130</string>
+    <string name="discover">Discover</string>
+    <string name="new_collection">Newest Collection</string>
+    <string name="add_image">Add Shoe Images</string>
+    <string name="add_brand">Select Shoe Brand</string>
+    <string name="shoe_size">Size :</string>
+    <string name="shoe_info">Shoe Info</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="explore_collection">Explore The new Collection Of Sneakers</string>
+    <string name="see_all">See All</string>
+    <string name="shoes_title">Shoes title</string>
+    <string name="shoes_price">Shoes price</string>
+    <string name="shoes_description">Shoes description</string>
+    <string name="default_size">40.5</string>
+    <string name="homeScreen">Home</string>
+    <string name="add_shoe">Add New Shoe</string>
+    <string name="entre_the_image_link">Entre the image link</string>
+    <string name="save_link">Save</string>
+
+</resources>

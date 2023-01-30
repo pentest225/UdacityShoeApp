@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/inputLabel"
+            style="@style/login_subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/entre_the_image_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/inputLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editText"
+            style="@style/input_him_text"
+            android:background="@drawable/input_decoration"
+            android:hint="@string/image_link"
+            android:inputType="textUri"
+            android:layout_width="0dp"
+
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnSaveLink"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/save_link"
+            android:background="@drawable/button_rounded" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
