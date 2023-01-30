@@ -30,7 +30,7 @@ class ShoesItemAdapter(private val shoeList:List<Shoe>,val layout:Int, val onSel
         holder.shoeDescription?.text = selectedShoe.smallDescription
         holder.shoePrice.text = selectedShoe.price
         holder.shoeImage.load(selectedShoe.images.first()){
-            placeholder(R.drawable.default_shoes)
+            placeholder(R.drawable.loading)
             transformations(CircleCropTransformation())
         }
     }

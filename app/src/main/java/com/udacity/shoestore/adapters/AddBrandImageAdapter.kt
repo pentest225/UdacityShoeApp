@@ -25,7 +25,7 @@ class AddShoesImageAdapter(private val imageList:List<String>,val onDelete:(imag
         val selectedImage = imageList[position]
 
         holder.shoeImage.load(selectedImage){
-            placeholder(R.drawable.default_shoes)
+            placeholder(R.drawable.loading)
             transformations(CircleCropTransformation())
         }
         holder.deleteCard.setOnClickListener {
