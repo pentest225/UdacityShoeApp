@@ -74,6 +74,9 @@
                         app:layout_constraintBottom_toBottomOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <!--END NEW COLLECTION CARD-->
+<!--                <include layout="@layout/shoes_item"/>-->
+<!--                <include layout="@layout/shoes_item"/>-->
+<!--                <include layout="@layout/shoes_item"/>-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvNewCollection"
