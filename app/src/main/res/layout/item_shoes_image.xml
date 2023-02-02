@@ -7,6 +7,7 @@
     app:cardElevation="2dp"
     android:layout_marginLeft="5dp"
     >
+<!--    Is User ConstraintLayout because i want to fixe the close button on specific position-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

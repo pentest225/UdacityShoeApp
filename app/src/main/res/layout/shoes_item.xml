@@ -6,7 +6,7 @@
     app:cardBackgroundColor="@color/white"
     app:cardElevation="4dp"
     app:cardCornerRadius="10dp">
-
+<!--    I use ConstraintLayout because the brand icon is above the shoe-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,6 +30,7 @@
             android:layout_height="120dp"
             android:src="@drawable/default_shoes"
             />
+<!--        I use LinearLayout because the views are one below the other-->
         <LinearLayout
             android:id="@+id/priceLayout"
             app:layout_constraintStart_toStartOf="parent"

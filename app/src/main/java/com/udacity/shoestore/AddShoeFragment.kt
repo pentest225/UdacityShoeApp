@@ -30,6 +30,16 @@ class AddShoeFragment : Fragment() {
     lateinit var shoesSizeAdapter : ShoesSizeAdapter
     lateinit var shoesImageAdapter: AddShoesImageAdapter
     var selectedBrand : BrandData? = null
+    var createdShoe:Shoe = Shoe(
+        name = "Patrick Shoe",
+        description = "",
+        smallDescription = "",
+        price = "",
+        isNewCollection = false,
+        company = "",
+        images = mutableListOf(),
+        size = 0.0
+    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,27 +52,26 @@ class AddShoeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initShoeImageRecyclerView()
+        binding.viewModel = viewModel
+        binding.createdShoe = createdShoe
+        binding.lifecycleOwner = this
+
         addShoesDialog = SaveShoeLinkDialogue(requireContext(), onSave = {
             viewModel.addShoeImage(it)
         })
+
         binding.addButton.setOnClickListener {
             addShoesDialog.show()
         }
         binding.spinnerBrand.adapter = BrandItemAdapter(requireContext(),DefaultDataList.brandList)
+
         binding.spinnerBrand.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 selectedBrand = DefaultDataList.brandList[position]
-
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 Timber.i("On Nothing selected")
             }
-        }
-        viewModel.shoeSizeList.value?.let {
-
-        }
-        viewModel.addedShoeLink.value?.let {
-
         }
         binding.buttonSubmit.setOnClickListener {
             saveShoes()
@@ -71,30 +80,27 @@ class AddShoeFragment : Fragment() {
     }
 
     private fun saveShoes(){
+        Timber.i(createdShoe.toString())
         if(selectedBrand == null){
             Toast.makeText(requireContext(),"Select Shoe brand please",Toast.LENGTH_LONG).show()
-        }else if(binding.editText.text.isBlank()){
+        }else if(createdShoe.name.isBlank()){
             Toast.makeText(requireContext(),"Add Shoes title please",Toast.LENGTH_LONG).show()
-        }else if(binding.edDescription.text.isBlank()){
+        }else if(createdShoe.description.isBlank()){
             Toast.makeText(requireContext(),"Add Shoes description please",Toast.LENGTH_LONG).show()
-        }else if (binding.editPrice.text.isBlank()){
+        }else if (createdShoe.price.isBlank()){
             Toast.makeText(requireContext(),"Add Shoes PRICE please",Toast.LENGTH_LONG).show()
         }else if(viewModel.addedShoeLink.value == null || viewModel.addedShoeLink.value!!.isEmpty()){
             Toast.makeText(requireContext(),"Select One or more image the shoes please",Toast.LENGTH_LONG).show()
         }
         else{
            val links = viewModel.addedShoeLink.value!!
-            val newShoe = Shoe(
-                name = binding.editText.text.toString(),
-                description = binding.edDescription.text.toString(),
+            createdShoe = createdShoe.copy(
                 smallDescription = binding.edDescription.text.toString(),
                 company = selectedBrand!!.brandName,
-                price = binding.editPrice.text.toString(),
-                images = links ,
-                isNewCollection = true,
-                size = 40.0 //i DON'T HAVE TIME TO IMPLEMENT THE SIZE CLICKER
+                images = links,
+                size = 40.0 //I DON'T HAVE TIME TO IMPLEMENT THE SIZE CLICKER
             )
-            viewModel.addNewShow(newShoe)
+            viewModel.addNewShow(createdShoe)
             findNavController().navigateUp()
         }
 

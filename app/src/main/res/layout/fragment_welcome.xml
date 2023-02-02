@@ -6,6 +6,8 @@
     <data>
 
     </data>
+<!--    I use ConstraintLayout because I want to constrain the Next button to the bottom of the page
+        and keep the textViews in the center of the page-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

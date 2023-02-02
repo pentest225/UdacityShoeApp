@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.ShoeViewModel" />
+        <variable
+            name="createdShoe"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
 
     <ScrollView
@@ -35,6 +40,7 @@
                 android:background="@drawable/input_decoration"
                 android:hint="@string/shoes_title"
                 android:inputType="textEmailAddress"
+                android:text="@={createdShoe.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -45,6 +51,7 @@
                 android:height="140dp"
                 android:background="@drawable/input_decoration"
                 android:hint="@string/shoes_description"
+                android:text="@={createdShoe.description}"
                 android:inputType="text|textMultiLine"
                 android:maxLines="10"
                 app:layout_constraintStart_toStartOf="@+id/editText"
@@ -57,6 +64,7 @@
                 style="@style/input_him_text"
                 android:background="@drawable/input_decoration"
                 android:hint="@string/shoes_price"
+                android:text="@={createdShoe.price}"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -77,7 +85,9 @@
                 android:id="@+id/spinnerBrand"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                tools:listitem="@layout/item_brand" />
+                tools:listitem="@layout/item_brand"
+
+                />
 
             <TextView
 
@@ -165,7 +175,6 @@
                 app:layout_constraintBottom_toBottomOf="parent" />
 
         </LinearLayout>
-
 
     </ScrollView>
 </layout>
